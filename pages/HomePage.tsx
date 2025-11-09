@@ -3,7 +3,7 @@ import HeroSection from '../components/HeroSection';
 import ProductGrid from '../components/ProductGrid';
 import CategoryShowcase from '../components/CategoryShowcase';
 import Testimonials from '../components/Testimonials';
-import { PRODUCTS } from '../constants/index';
+import { PRODUCTS } from '../constants';
 
 const HomePage: React.FC = () => {
     return (

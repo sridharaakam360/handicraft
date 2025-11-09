@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CATEGORIES } from '../constants/index';
-import type { Category } from '../src/types';
+import { CATEGORIES } from '../constants';
+import type { Category } from '../types';
 
 const CategoryCard: React.FC<{ category: Category }> = ({ category }) => (
     <Link to="/products" className="relative block rounded-lg overflow-hidden group h-96">
