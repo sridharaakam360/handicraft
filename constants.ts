@@ -12,14 +12,14 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const PRODUCTS: Product[] = [
-  { id: 1, name: 'Dancing Ganesh Statue', price: 250, originalPrice: 300, imageUrl: 'https://source.unsplash.com/400x400/?ganesha,statue,bronze', category: 'Bronze' },
-  { id: 2, name: 'Wooden Elephant Head', price: 180, imageUrl: 'https://source.unsplash.com/400x400/?wooden,elephant,carving', category: 'Wood' },
-  { id: 3, name: 'Traditional Brass Lamp', price: 120, imageUrl: 'https://source.unsplash.com/400x400/?brass,lamp,diya,india', category: 'Brass' },
-  { id: 4, name: 'Lord Krishna Tanjore Painting', price: 450, originalPrice: 500, imageUrl: 'https://source.unsplash.com/400x400/?krishna,painting,indian,art', category: 'Painting' },
-  { id: 5, name: 'Nataraja Bronze Idol', price: 320, imageUrl: 'https://source.unsplash.com/400x400/?shiva,nataraja,statue', category: 'Bronze' },
-  { id: 6, name: 'Hand-carved Wooden Panel', price: 280, imageUrl: 'https://source.unsplash.com/400x400/?wooden,carving,panel,intricate', category: 'Wood' },
-  { id: 7, name: 'Peacock Brass Diya', price: 95, originalPrice: 110, imageUrl: 'https://source.unsplash.com/400x400/?brass,peacock,lamp', category: 'Brass' },
-  { id: 8, name: 'Goddess Lakshmi Painting', price: 400, imageUrl: 'https://source.unsplash.com/400x400/?lakshmi,painting,indian,gold', category: 'Painting' },
+  { id: 1, name: 'Dancing Ganesh Statue', price: 250, originalPrice: 300, imageUrl: 'https://source.unsplash.com/400x400/?ganesha,bronze,idol', category: 'Bronze' },
+  { id: 2, name: 'Wooden Elephant Head', price: 180, imageUrl: 'https://source.unsplash.com/400x400/?wooden,elephant,wall,art', category: 'Wood' },
+  { id: 3, name: 'Traditional Brass Lamp', price: 120, imageUrl: 'https://source.unsplash.com/400x400/?traditional,brass,diya,lamp', category: 'Brass' },
+  { id: 4, name: 'Lord Krishna Tanjore Painting', price: 450, originalPrice: 500, imageUrl: 'https://source.unsplash.com/400x400/?krishna,tanjore,painting', category: 'Painting' },
+  { id: 5, name: 'Nataraja Bronze Idol', price: 320, imageUrl: 'https://source.unsplash.com/400x400/?nataraja,bronze,statue,india', category: 'Bronze' },
+  { id: 6, name: 'Hand-carved Wooden Panel', price: 280, imageUrl: 'https://source.unsplash.com/400x400/?intricate,wood,carving,panel', category: 'Wood' },
+  { id: 7, name: 'Peacock Brass Diya', price: 95, originalPrice: 110, imageUrl: 'https://source.unsplash.com/400x400/?peacock,diya,lamp,brass', category: 'Brass' },
+  { id: 8, name: 'Goddess Lakshmi Painting', price: 400, imageUrl: 'https://source.unsplash.com/400x400/?lakshmi,tanjore,painting,gold', category: 'Painting' },
 ];
 
 export const CATEGORIES: Category[] = [
