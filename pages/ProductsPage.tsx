@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ProductGrid from '../components/ProductGrid';
-import { PRODUCTS } from '../constants';
+import { PRODUCTS } from '../constants/index';
 
 const ProductsPage: React.FC = () => {
   return (
