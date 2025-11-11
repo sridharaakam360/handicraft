@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import type { Product } from '../types';
 
 interface ProductCardProps {
@@ -20,27 +21,31 @@ const WhatsappIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     const phoneNumber = "911234567890";
-    const message = encodeURIComponent(`I'm interested in buying the product: ${product.name} (Price: $${product.price.toFixed(2)})`);
+    const message = encodeURIComponent(`I'm interested in buying the product: ${product.name} (Price: ₹${product.price.toLocaleString('en-IN')})`);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
     return (
         <div className="bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group flex flex-col">
-            <div className="relative overflow-hidden">
-                <img 
-                    src={product.imageUrl} 
-                    alt={product.name} 
-                    className="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500"
-                />
-                 {product.originalPrice && (
-                    <span className="absolute top-3 left-3 bg-brand-secondary text-white text-xs font-bold px-2 py-1 rounded">SALE</span>
-                )}
-            </div>
+            <Link to={`/products/${product.id}`} className="block">
+                <div className="relative overflow-hidden">
+                    <img 
+                        src={product.imageUrl} 
+                        alt={product.name} 
+                        className="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    />
+                     {product.originalPrice && (
+                        <span className="absolute top-3 left-3 bg-brand-secondary text-white text-xs font-bold px-2 py-1 rounded">SALE</span>
+                    )}
+                </div>
+            </Link>
             <div className="p-4 text-center flex flex-col flex-grow">
-                <h3 className="text-lg font-semibold text-brand-dark mb-2 truncate">{product.name}</h3>
+                <h3 className="text-lg font-semibold text-brand-dark mb-2 truncate">
+                    <Link to={`/products/${product.id}`} className="hover:text-brand-primary">{product.name}</Link>
+                </h3>
                 <div className="flex justify-center items-center space-x-2">
-                    <p className="text-xl font-bold text-brand-primary">${product.price.toFixed(2)}</p>
+                    <p className="text-xl font-bold text-brand-primary">₹{product.price.toLocaleString('en-IN')}</p>
                     {product.originalPrice && (
-                        <p className="text-md text-gray-500 line-through">${product.originalPrice.toFixed(2)}</p>
+                        <p className="text-md text-gray-500 line-through">₹{product.originalPrice.toLocaleString('en-IN')}</p>
                     )}
                 </div>
                 <div className="mt-auto pt-4 flex items-center space-x-2">

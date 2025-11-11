@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { NAV_LINKS } from '../constants';
 import type { NavLink } from '../types';
 
@@ -34,8 +33,23 @@ const CloseIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     </svg>
 );
 
-const Header: React.FC = () => {
+interface HeaderProps {
+    searchTerm: string;
+    setSearchTerm: (term: string) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm }) => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newSearchTerm = event.target.value;
+        setSearchTerm(newSearchTerm);
+        if (location.pathname !== '/products' && newSearchTerm.trim() !== '') {
+            navigate('/products');
+        }
+    };
 
     return (
         <header className="bg-white shadow-md sticky top-0 z-50">
@@ -57,7 +71,13 @@ const Header: React.FC = () => {
                 </Link>
 
                 <div className="hidden lg:flex items-center space-x-4 border rounded-full px-4 py-2 flex-1 max-w-lg">
-                    <input type="text" placeholder="Search for products..." className="outline-none w-full bg-transparent"/>
+                    <input 
+                        type="text" 
+                        placeholder="Search for products..." 
+                        className="outline-none w-full bg-transparent"
+                        value={searchTerm}
+                        onChange={handleSearchChange}
+                    />
                     <button className="text-gray-500 hover:text-brand-primary"><SearchIcon className="w-5 h-5"/></button>
                 </div>
 

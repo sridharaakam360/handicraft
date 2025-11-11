@@ -6,6 +6,7 @@ export interface Product {
   originalPrice?: number;
   imageUrl: string;
   category: string;
+  description: string;
 }
 
 export interface Category {
@@ -23,7 +24,7 @@ export interface Testimonial {
 }
 
 export interface NavLink {
-    name: string;
+    name:string;
     path: string;
     sublinks?: NavLink[];
 }
