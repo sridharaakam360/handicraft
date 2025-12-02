@@ -1,35 +1,37 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import {
+    AppShell,
+    Group,
+    TextInput,
+    ActionIcon,
+    Burger,
+    Drawer,
+    Stack,
+    Anchor,
+    Box,
+    Container,
+    Text
+} from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import { NAV_LINKS } from '../constants';
 import type { NavLink } from '../types';
 
 const SearchIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-  </svg>
-);
-
-const UserIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-  </svg>
-);
-
-const CartIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-  </svg>
-);
-
-const MenuIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
     </svg>
 );
 
-const CloseIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+const UserIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+    </svg>
+);
+
+const CartIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
     </svg>
 );
 
@@ -39,7 +41,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm }) => {
-    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [opened, { toggle, close }] = useDisclosure(false);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -52,78 +54,130 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm }) => {
     };
 
     return (
-        <header className="bg-white shadow-md sticky top-0 z-50">
+        <Box component="header" style={{ position: 'sticky', top: 0, zIndex: 100 }}>
             {/* Top bar */}
-            <div className="bg-brand-primary text-white text-xs py-2">
-                <div className="container mx-auto px-4 flex justify-between items-center">
-                    <span>Welcome to South Indian Handicrafts</span>
-                    <div className="flex items-center space-x-4">
-                        <a href="tel:+911234567890" className="hover:text-brand-secondary">Call Us: +91-1234567890</a>
-                        <a href="mailto:info@sih.com" className="hover:text-brand-secondary hidden md:block">info@sih.com</a>
-                    </div>
-                </div>
-            </div>
+            <Box style={{ backgroundColor: '#6a1b1a', color: 'white', fontSize: '0.75rem', padding: '0.5rem 0' }}>
+                <Container size="xl">
+                    <Group justify="space-between">
+                        <Text size="xs">Welcome to South Indian Handicrafts</Text>
+                        <Group gap="md">
+                            <Anchor href="tel:+911234567890" c="white" size="xs" style={{ textDecoration: 'none' }}>
+                                Call Us: +91-1234567890
+                            </Anchor>
+                            <Anchor
+                                href="mailto:info@sih.com"
+                                c="white"
+                                size="xs"
+                                style={{ textDecoration: 'none' }}
+                                visibleFrom="md"
+                            >
+                                info@sih.com
+                            </Anchor>
+                        </Group>
+                    </Group>
+                </Container>
+            </Box>
 
             {/* Main header */}
-            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-                <Link to="/" className="text-2xl lg:text-3xl font-serif font-bold text-brand-primary">
-                    SI<span className="text-brand-secondary">Handicrafts</span>
-                </Link>
+            <Box style={{ backgroundColor: 'white', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+                <Container size="xl" py="md">
+                    <Group justify="space-between">
+                        <Link to="/" style={{ textDecoration: 'none', color: '#6a1b1a', fontSize: '1.5rem', fontWeight: 'bold', fontFamily: 'Georgia, serif' }}>
+                            SI<span style={{ color: '#f7941d' }}>Handicrafts</span>
+                        </Link>
 
-                <div className="hidden lg:flex items-center space-x-4 border rounded-full px-4 py-2 flex-1 max-w-lg">
-                    <input 
-                        type="text" 
-                        placeholder="Search for products..." 
-                        className="outline-none w-full bg-transparent"
-                        value={searchTerm}
-                        onChange={handleSearchChange}
-                    />
-                    <button className="text-gray-500 hover:text-brand-primary"><SearchIcon className="w-5 h-5"/></button>
-                </div>
+                        <TextInput
+                            placeholder="Search for products..."
+                            value={searchTerm}
+                            onChange={handleSearchChange}
+                            rightSection={<SearchIcon style={{ width: 20, height: 20, color: '#6a1b1a' }} />}
+                            style={{ flex: 1, maxWidth: 500 }}
+                            visibleFrom="lg"
+                            styles={{
+                                input: {
+                                    borderRadius: 9999,
+                                }
+                            }}
+                        />
 
-                <div className="flex items-center space-x-4">
-                    <button className="text-gray-600 hover:text-brand-primary"><UserIcon className="w-6 h-6"/></button>
-                    <button className="text-gray-600 hover:text-brand-primary relative">
-                        <CartIcon className="w-6 h-6"/>
-                        <span className="absolute -top-2 -right-2 bg-brand-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
-                    </button>
-                    <button className="lg:hidden" onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
-                        <MenuIcon className="w-6 h-6"/>
-                    </button>
-                </div>
-            </div>
-            
+                        <Group gap="sm">
+                            <ActionIcon variant="subtle" color="gray" size="lg">
+                                <UserIcon style={{ width: 24, height: 24 }} />
+                            </ActionIcon>
+                            <ActionIcon variant="subtle" color="gray" size="lg" style={{ position: 'relative' }}>
+                                <CartIcon style={{ width: 24, height: 24 }} />
+                                <Box
+                                    style={{
+                                        position: 'absolute',
+                                        top: -8,
+                                        right: -8,
+                                        backgroundColor: '#f7941d',
+                                        color: 'white',
+                                        borderRadius: '50%',
+                                        width: 20,
+                                        height: 20,
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        fontSize: '0.75rem'
+                                    }}
+                                >
+                                    0
+                                </Box>
+                            </ActionIcon>
+                            <Burger opened={opened} onClick={toggle} hiddenFrom="lg" size="sm" />
+                        </Group>
+                    </Group>
+                </Container>
+            </Box>
+
             {/* Navigation */}
-            <nav className="hidden lg:block bg-brand-dark text-white">
-                <div className="container mx-auto px-4">
-                    <ul className="flex justify-center items-center space-x-8">
+            <Box style={{ backgroundColor: '#3a0e0d', color: 'white' }} visibleFrom="lg">
+                <Container size="xl">
+                    <Group justify="center" gap="xl" py="sm">
                         {NAV_LINKS.map((link: NavLink) => (
-                             <li key={link.name} className="py-3">
-                                <Link to={link.path} className="hover:text-brand-secondary transition-colors duration-300 uppercase text-sm font-medium">{link.name}</Link>
-                             </li>
+                            <Link
+                                key={link.name}
+                                to={link.path}
+                                style={{
+                                    color: 'white',
+                                    textDecoration: 'none',
+                                    textTransform: 'uppercase',
+                                    fontSize: '0.875rem',
+                                    fontWeight: 500,
+                                    transition: 'color 0.3s'
+                                }}
+                                onMouseEnter={(e) => e.currentTarget.style.color = '#f7941d'}
+                                onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
+                            >
+                                {link.name}
+                            </Link>
                         ))}
-                    </ul>
-                </div>
-            </nav>
+                    </Group>
+                </Container>
+            </Box>
 
             {/* Mobile Menu */}
-            <div className={`fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40 transition-opacity duration-300 lg:hidden ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={() => setMobileMenuOpen(false)}></div>
-            <div className={`fixed top-0 right-0 w-4/5 max-w-sm h-full bg-white z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-                 <div className="flex justify-between items-center p-4 border-b">
-                    <h2 className="font-bold text-brand-primary">Menu</h2>
-                    <button onClick={() => setMobileMenuOpen(false)}><CloseIcon className="w-6 h-6" /></button>
-                 </div>
-                 <nav className="p-4">
-                    <ul>
-                        {NAV_LINKS.map((link: NavLink) => (
-                           <li key={link.name} className="py-2 border-b">
-                             <Link to={link.path} onClick={() => setMobileMenuOpen(false)} className="block hover:text-brand-secondary transition-colors duration-300">{link.name}</Link>
-                           </li>
-                        ))}
-                    </ul>
-                 </nav>
-            </div>
-        </header>
+            <Drawer opened={opened} onClose={close} position="right" title="Menu" size="sm">
+                <Stack gap="md">
+                    {NAV_LINKS.map((link: NavLink) => (
+                        <Link
+                            key={link.name}
+                            to={link.path}
+                            onClick={close}
+                            style={{
+                                color: '#6a1b1a',
+                                textDecoration: 'none',
+                                padding: '0.5rem 0',
+                                borderBottom: '1px solid #e0e0e0'
+                            }}
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
+                </Stack>
+            </Drawer>
+        </Box>
     );
 };
 

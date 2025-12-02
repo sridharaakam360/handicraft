@@ -1,63 +1,108 @@
 import React from 'react';
+import { Box, Container, Title, Text, Grid, TextInput, Textarea, Button, Stack, Anchor } from '@mantine/core';
 
 const ContactPage: React.FC = () => {
   return (
-    <div className="bg-brand-light py-16">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-brand-dark">Get In Touch</h1>
-          <p className="text-lg text-gray-600 mt-2">We'd love to hear from you. Contact us for any queries or feedback.</p>
-        </div>
-        
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 bg-white p-8 rounded-lg shadow-lg">
+    <Box style={{ backgroundColor: '#fef3e3' }} py={64}>
+      <Container size="xl">
+        <Box ta="center" mb={48}>
+          <Title order={1} size="2.5rem" ff="Georgia, serif" fw={700} c="#3a0e0d">
+            Get In Touch
+          </Title>
+          <Text size="lg" c="dimmed" mt="xs">
+            We'd love to hear from you. Contact us for any queries or feedback.
+          </Text>
+        </Box>
+
+        <Grid
+          maw={1120}
+          mx="auto"
+          gutter="xl"
+          style={{
+            backgroundColor: 'white',
+            padding: '2rem',
+            borderRadius: 8,
+            boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
+          }}
+        >
           {/* Contact Form */}
-          <div>
-            <h2 className="text-2xl font-bold text-brand-primary mb-6">Send us a Message</h2>
-            <form className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
-                <input type="text" id="name" name="name" className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-primary focus:border-brand-primary" />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
-                <input type="email" id="email" name="email" className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-primary focus:border-brand-primary" />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-                <textarea id="message" name="message" rows={4} className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-primary focus:border-brand-primary"></textarea>
-              </div>
-              <div>
-                <button type="submit" className="w-full bg-brand-primary text-white py-2 px-4 rounded-full font-bold hover:bg-brand-dark transition-colors duration-300">
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
-          
+          <Grid.Col span={{ base: 12, md: 6 }}>
+            <Stack gap="md">
+              <Title order={2} size="1.5rem" fw={700} c="#6a1b1a" mb="md">
+                Send us a Message
+              </Title>
+              <form>
+                <Stack gap="md">
+                  <TextInput
+                    label="Full Name"
+                    placeholder="Your name"
+                    required
+                  />
+                  <TextInput
+                    label="Email Address"
+                    placeholder="your@email.com"
+                    type="email"
+                    required
+                  />
+                  <Textarea
+                    label="Message"
+                    placeholder="Your message"
+                    rows={4}
+                    required
+                  />
+                  <Button
+                    type="submit"
+                    fullWidth
+                    radius="xl"
+                    size="md"
+                    style={{ backgroundColor: '#6a1b1a' }}
+                    styles={{
+                      root: {
+                        '&:hover': {
+                          backgroundColor: '#3a0e0d',
+                        }
+                      }
+                    }}
+                  >
+                    Submit
+                  </Button>
+                </Stack>
+              </form>
+            </Stack>
+          </Grid.Col>
+
           {/* Contact Information */}
-          <div className="space-y-6 text-gray-700">
-            <h2 className="text-2xl font-bold text-brand-primary mb-6">Contact Information</h2>
-            <div>
-              <h3 className="font-semibold text-brand-dark">Address:</h3>
-              <p>123 Temple Street, Chennai, Tamil Nadu, India - 600001</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-brand-dark">Email:</h3>
-              <p><a href="mailto:info@sih.com" className="text-brand-primary hover:underline">info@sih.com</a></p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-brand-dark">Phone:</h3>
-              <p><a href="tel:+911234567890" className="text-brand-primary hover:underline">+91-1234567890</a></p>
-            </div>
-             <div>
-              <h3 className="font-semibold text-brand-dark">Business Hours:</h3>
-              <p>Monday - Saturday: 10:00 AM - 7:00 PM</p>
-              <p>Sunday: Closed</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+          <Grid.Col span={{ base: 12, md: 6 }}>
+            <Stack gap="xl" c="#374151">
+              <Title order={2} size="1.5rem" fw={700} c="#6a1b1a" mb="md">
+                Contact Information
+              </Title>
+              <div>
+                <Text fw={600} c="#3a0e0d">Address:</Text>
+                <Text>123 Temple Street, Chennai, Tamil Nadu, India - 600001</Text>
+              </div>
+              <div>
+                <Text fw={600} c="#3a0e0d">Email:</Text>
+                <Anchor href="mailto:info@sih.com" c="#6a1b1a">
+                  info@sih.com
+                </Anchor>
+              </div>
+              <div>
+                <Text fw={600} c="#3a0e0d">Phone:</Text>
+                <Anchor href="tel:+911234567890" c="#6a1b1a">
+                  +91-1234567890
+                </Anchor>
+              </div>
+              <div>
+                <Text fw={600} c="#3a0e0d">Business Hours:</Text>
+                <Text>Monday - Saturday: 10:00 AM - 7:00 PM</Text>
+                <Text>Sunday: Closed</Text>
+              </div>
+            </Stack>
+          </Grid.Col>
+        </Grid>
+      </Container>
+    </Box>
   );
 };
 

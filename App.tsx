@@ -1,6 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { Box } from '@mantine/core';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -23,7 +23,7 @@ const AppContent: React.FC = () => {
   }, [location.pathname]);
 
   return (
-    <div className="bg-brand-light font-sans text-gray-800">
+    <Box style={{ backgroundColor: '#fef3e3', minHeight: '100vh' }}>
       <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <main>
         <Routes>
@@ -37,7 +37,7 @@ const AppContent: React.FC = () => {
         </Routes>
       </main>
       <Footer />
-    </div>
+    </Box>
   );
 };
 

@@ -1,74 +1,119 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Box, Container, Grid, Stack, Text, Anchor, Group } from '@mantine/core';
 
 const SocialIcon: React.FC<{ href: string, children: React.ReactNode }> = ({ href, children }) => (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="text-white hover:text-brand-secondary transition-colors duration-300">
+    <Anchor href={href} target="_blank" rel="noopener noreferrer" c="white" style={{ transition: 'color 0.3s' }}>
         {children}
-    </a>
+    </Anchor>
 );
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-brand-dark text-gray-300">
-            <div className="container mx-auto px-4 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <Box component="footer" style={{ backgroundColor: '#3a0e0d', color: '#d1d5db' }}>
+            <Container size="xl" py={48}>
+                <Grid gutter="xl">
                     {/* About Section */}
-                    <div>
-                        <h3 className="text-xl font-serif font-bold text-white mb-4">SI<span className="text-brand-secondary">Handicrafts</span></h3>
-                        <p className="text-sm">
-                            Preserving the rich heritage of South Indian art by bringing authentic, handcrafted masterpieces to the world. Each piece tells a story of tradition, skill, and devotion.
-                        </p>
-                        <div className="flex space-x-4 mt-6">
-                           <SocialIcon href="#"><svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.494v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.323-1.325z"/></svg></SocialIcon>
-                           <SocialIcon href="#"><svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.298 1.634 4.212 3.793 4.649-.65.177-1.354.23-2.067.087.616 1.9 2.396 3.281 4.5 3.315-2.053 1.6-4.573 2.541-7.24 2.182 2.118 1.365 4.633 2.162 7.34 2.162 8.807 0 13.61-7.277 13.61-13.61 0-.207-.005-.414-.014-.621.936-.676 1.742-1.52 2.384-2.471z"/></svg></SocialIcon>
-                           <SocialIcon href="#"><svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg></SocialIcon>
-                           <SocialIcon href="https://wa.me/911234567890">
-                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zM17.16 14.2c-.28-.14-1.64-.81-1.9-.9s-.45-.14-.64.14c-.19.27-.72.9-.88 1.08-.16.19-.32.21-.6.07-.27-.14-1.14-.42-2.17-1.34-.81-.71-1.36-1.59-1.52-1.86s-.02-.42.12-.56c.13-.13.28-.34.42-.5.14-.17.19-.28.28-.47.1-.19.05-.36-.02-.5s-.64-1.54-.88-2.1c-.24-.56-.49-.48-.64-.49-.16 0-.36-.01-.54-.01s-.46.07-.69.36c-.23.29-.92 1.02-.92 2.49s.94 2.9 1.07 3.1c.13.2 1.86 2.96 4.54 4.03.65.26 1.23.42 1.66.53.71.19 1.36.16 1.86-.09.57-.29 1.64-1.05 1.88-1.42.24-.37.24-.69.17-.83-.07-.13-.26-.22-.54-.36z"/>
-                                </svg>
-                           </SocialIcon>
-                        </div>
-                    </div>
+                    <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>
+                        <Stack gap="md">
+                            <Text size="xl" fw={700} c="white" ff="Georgia, serif">
+                                SI<span style={{ color: '#f7941d' }}>Handicrafts</span>
+                            </Text>
+                            <Text size="sm">
+                                Preserving the rich heritage of South Indian art by bringing authentic, handcrafted masterpieces to the world. Each piece tells a story of tradition, skill, and devotion.
+                            </Text>
+                            <Group gap="md" mt="md">
+                                <SocialIcon href="#">
+                                    <svg style={{ width: 24, height: 24 }} fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.494v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.323-1.325z" />
+                                    </svg>
+                                </SocialIcon>
+                                <SocialIcon href="#">
+                                    <svg style={{ width: 24, height: 24 }} fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.298 1.634 4.212 3.793 4.649-.65.177-1.354.23-2.067.087.616 1.9 2.396 3.281 4.5 3.315-2.053 1.6-4.573 2.541-7.24 2.182 2.118 1.365 4.633 2.162 7.34 2.162 8.807 0 13.61-7.277 13.61-13.61 0-.207-.005-.414-.014-.621.936-.676 1.742-1.52 2.384-2.471z" />
+                                    </svg>
+                                </SocialIcon>
+                                <SocialIcon href="#">
+                                    <svg style={{ width: 24, height: 24 }} fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z" />
+                                    </svg>
+                                </SocialIcon>
+                                <SocialIcon href="https://wa.me/911234567890">
+                                    <svg style={{ width: 24, height: 24 }} fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zM17.16 14.2c-.28-.14-1.64-.81-1.9-.9s-.45-.14-.64.14c-.19.27-.72.9-.88 1.08-.16.19-.32.21-.6.07-.27-.14-1.14-.42-2.17-1.34-.81-.71-1.36-1.59-1.52-1.86s-.02-.42.12-.56c.13-.13.28-.34.42-.5.14-.17.19-.28.28-.47.1-.19.05-.36-.02-.5s-.64-1.54-.88-2.1c-.24-.56-.49-.48-.64-.49-.16 0-.36-.01-.54-.01s-.46.07-.69.36c-.23.29-.92 1.02-.92 2.49s.94 2.9 1.07 3.1c.13.2 1.86 2.96 4.54 4.03.65.26 1.23.42 1.66.53.71.19 1.36.16 1.86-.09.57-.29 1.64-1.05 1.88-1.42.24-.37.24-.69.17-.83-.07-.13-.26-.22-.54-.36z" />
+                                    </svg>
+                                </SocialIcon>
+                            </Group>
+                        </Stack>
+                    </Grid.Col>
 
                     {/* Quick Links */}
-                    <div>
-                        <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
-                        <ul className="space-y-2 text-sm">
-                            <li><Link to="/about" className="hover:text-brand-secondary">About Us</Link></li>
-                            <li><Link to="/contact" className="hover:text-brand-secondary">Contact Us</Link></li>
-                            <li><Link to="/faq" className="hover:text-brand-secondary">FAQ</Link></li>
-                            <li><Link to="/privacy" className="hover:text-brand-secondary">Privacy Policy</Link></li>
-                        </ul>
-                    </div>
+                    <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>
+                        <Stack gap="md">
+                            <Text size="lg" fw={600} c="white">Quick Links</Text>
+                            <Stack gap="xs">
+                                <Link to="/about" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
+                                    About Us
+                                </Link>
+                                <Link to="/contact" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
+                                    Contact Us
+                                </Link>
+                                <Link to="/faq" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
+                                    FAQ
+                                </Link>
+                                <Link to="/privacy" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
+                                    Privacy Policy
+                                </Link>
+                            </Stack>
+                        </Stack>
+                    </Grid.Col>
 
                     {/* Shop */}
-                    <div>
-                        <h3 className="text-lg font-semibold text-white mb-4">Shop</h3>
-                        <ul className="space-y-2 text-sm">
-                            <li><Link to="/products" className="hover:text-brand-secondary">Bronze Statues</Link></li>
-                            <li><Link to="/products" className="hover:text-brand-secondary">Wooden Sculptures</Link></li>
-                            <li><Link to="/products" className="hover:text-brand-secondary">Brass Lamps</Link></li>
-                            <li><Link to="/products" className="hover:text-brand-secondary">Tanjore Paintings</Link></li>
-                        </ul>
-                    </div>
+                    <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>
+                        <Stack gap="md">
+                            <Text size="lg" fw={600} c="white">Shop</Text>
+                            <Stack gap="xs">
+                                <Link to="/products" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
+                                    Bronze Statues
+                                </Link>
+                                <Link to="/products" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
+                                    Wooden Sculptures
+                                </Link>
+                                <Link to="/products" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
+                                    Brass Lamps
+                                </Link>
+                                <Link to="/products" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
+                                    Tanjore Paintings
+                                </Link>
+                            </Stack>
+                        </Stack>
+                    </Grid.Col>
 
                     {/* Contact Info */}
-                    <div>
-                        <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
-                        <address className="text-sm not-italic space-y-3">
-                            <p>123 Temple Street, Chennai, Tamil Nadu, India - 600001</p>
-                            <p>Email: <a href="mailto:info@sih.com" className="hover:text-brand-secondary">info@sih.com</a></p>
-                            <p>Phone: <a href="tel:+911234567890" className="hover:text-brand-secondary">+91-1234567890</a></p>
-                        </address>
-                    </div>
-                </div>
-            </div>
-            <div className="bg-black bg-opacity-20 py-4">
-                <div className="container mx-auto px-4 text-center text-sm text-gray-400">
-                    &copy; {new Date().getFullYear()} South Indian Handicrafts Clone. All Rights Reserved.
-                </div>
-            </div>
-        </footer>
+                    <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>
+                        <Stack gap="md">
+                            <Text size="lg" fw={600} c="white">Contact Us</Text>
+                            <Stack gap="sm" component="address" style={{ fontStyle: 'normal' }}>
+                                <Text size="sm">123 Temple Street, Chennai, Tamil Nadu, India - 600001</Text>
+                                <Text size="sm">
+                                    Email: <Anchor href="mailto:info@sih.com" c="#d1d5db">info@sih.com</Anchor>
+                                </Text>
+                                <Text size="sm">
+                                    Phone: <Anchor href="tel:+911234567890" c="#d1d5db">+91-1234567890</Anchor>
+                                </Text>
+                            </Stack>
+                        </Stack>
+                    </Grid.Col>
+                </Grid>
+            </Container>
+            <Box style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)', padding: '1rem 0' }}>
+                <Container size="xl">
+                    <Text ta="center" size="sm" c="#9ca3af">
+                        &copy; {new Date().getFullYear()} South Indian Handicrafts Clone. All Rights Reserved.
+                    </Text>
+                </Container>
+            </Box>
+        </Box>
     );
 };
 

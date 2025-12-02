@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Box, Container, Title, SimpleGrid, Anchor, Group } from '@mantine/core';
 import type { Product } from '../types';
 import ProductCard from './ProductCard';
 
@@ -12,23 +12,34 @@ interface ProductGridProps {
 
 const ProductGrid: React.FC<ProductGridProps> = ({ title, products, showMoreLink }) => {
     return (
-        <div className="py-12 bg-white">
-            <div className="container mx-auto px-4">
-                <div className="flex justify-between items-center mb-8">
-                    <h2 className="text-3xl font-serif font-bold text-brand-dark">{title}</h2>
+        <Box py={48} style={{ backgroundColor: 'white' }}>
+            <Container size="xl">
+                <Group justify="space-between" mb="xl">
+                    <Title order={2} size="2rem" ff="Georgia, serif" fw={700} c="#3a0e0d">
+                        {title}
+                    </Title>
                     {showMoreLink && (
-                        <Link to={showMoreLink} className="text-brand-primary font-semibold hover:text-brand-secondary">
-                            View All &rarr;
-                        </Link>
+                        <Anchor
+                            component={Link}
+                            to={showMoreLink}
+                            c="#6a1b1a"
+                            fw={600}
+                            style={{ textDecoration: 'none' }}
+                        >
+                            View All →
+                        </Anchor>
                     )}
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                </Group>
+                <SimpleGrid
+                    cols={{ base: 1, sm: 2, lg: 4 }}
+                    spacing="lg"
+                >
                     {products.map(product => (
                         <ProductCard key={product.id} product={product} />
                     ))}
-                </div>
-            </div>
-        </div>
+                </SimpleGrid>
+            </Container>
+        </Box>
     );
 };
 
