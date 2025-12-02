@@ -5,7 +5,7 @@ import { CATEGORIES } from '../constants';
 import type { Category } from '../types';
 
 const CategoryCard: React.FC<{ category: Category }> = ({ category }) => (
-    <Link to="/products" style={{ textDecoration: 'none' }}>
+    <Link to={`/products?category=${encodeURIComponent(category.name)}`} style={{ textDecoration: 'none' }}>
         <Box
             style={{
                 position: 'relative',

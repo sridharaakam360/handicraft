@@ -12,7 +12,7 @@ const PrivacyPolicyPage: React.FC = () => {
           <Text c="dimmed">Last updated: {new Date().toLocaleDateString()}</Text>
 
           <Text>
-            South Indian Handicrafts ("us", "we", or "our") operates this website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
+            Amirtha Super Store ("us", "we", or "our") operates this website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
           </Text>
 
           <div>
@@ -82,7 +82,7 @@ const PrivacyPolicyPage: React.FC = () => {
             </Title>
             <Text mb="sm">If you have any questions about this Privacy Policy, please contact us:</Text>
             <List>
-              <List.Item>By email: privacy@sih.com</List.Item>
+              <List.Item>By email: privacy@amirthasuperstore.com</List.Item>
             </List>
           </div>
         </Stack>

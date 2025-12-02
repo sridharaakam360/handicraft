@@ -7,18 +7,18 @@ const AboutPage: React.FC = () => {
       <Container size="xl">
         <Box maw={896} mx="auto" ta="center">
           <Title order={1} size="2.5rem" ff="Georgia, serif" fw={700} c="#3a0e0d" mb="md">
-            About SI Handicrafts
+            About Amirtha Super Store
           </Title>
           <Text size="lg" c="dimmed" mb="xl">
-            Preserving Centuries of Tradition in Every Masterpiece
+            Tradition Meets Modernity in Kumbakonam
           </Text>
         </Box>
 
         <Grid maw={1120} mx="auto" gutter="xl" align="center" mt={48}>
           <Grid.Col span={{ base: 12, md: 6 }}>
             <Image
-              src="https://source.unsplash.com/600x400/?indian,artisan,craft"
-              alt="Artisan at work"
+              src="/assests/home/about.png"
+              alt="Amirtha Super Store"
               radius="md"
               style={{ boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}
             />
@@ -29,16 +29,16 @@ const AboutPage: React.FC = () => {
                 Our Story
               </Title>
               <Text>
-                South Indian Handicrafts was born from a deep love and respect for the timeless artistry of our homeland. We witnessed the incredible skill of local artisans, whose talents have been passed down through generations, and felt a calling to share their magnificent creations with the world.
+                Located in the heart of Natchar Koil, Kumbakonam, Amirtha Super Store has established itself as a premier destination for quality home needs. From the spiritual resonance of traditional bronze statues and brass lamps to the modern convenience of latest electronics and home appliances, we bridge the gap between tradition and contemporary living.
               </Text>
               <Text>
-                Our journey began in the temple towns of Tamil Nadu, sourcing authentic bronze statues, and soon expanded to embrace the rich diversity of wooden sculptures from Kerala, radiant brass lamps, and the divine Tanjore paintings that adorn sacred spaces.
+                We take pride in offering a diverse range of products including exquisite furniture that adds elegance to your home, and authentic puja items that are essential for your spiritual practices. Our commitment to quality and customer satisfaction has made us a trusted name in the region.
               </Text>
               <Title order={2} size="1.5rem" ff="Georgia, serif" fw={700} c="#6a1b1a" mt="md">
                 Our Mission
               </Title>
               <Text>
-                Our mission is twofold: to bring you authentic, high-quality handcrafted items that carry the essence of South Indian culture, and to support the artisan communities that are the custodians of this precious heritage. By choosing SI Handicrafts, you are not just buying a product; you are becoming part of a story and helping to sustain a legacy of unparalleled craftsmanship.
+                Our mission is to provide our customers with the best selection of products at competitive prices, all under one roof. Whether you are looking for a divine idol for your prayer room, a new television for your living room, or a comfortable sofa set, Amirtha Super Store is dedicated to serving your needs with integrity and excellence.
               </Text>
             </Stack>
           </Grid.Col>

@@ -17,10 +17,10 @@ const Footer: React.FC = () => {
                     <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>
                         <Stack gap="md">
                             <Text size="xl" fw={700} c="white" ff="Georgia, serif">
-                                SI<span style={{ color: '#f7941d' }}>Handicrafts</span>
+                                Amirtha<span style={{ color: '#f7941d' }}> Super Store</span>
                             </Text>
                             <Text size="sm">
-                                Preserving the rich heritage of South Indian art by bringing authentic, handcrafted masterpieces to the world. Each piece tells a story of tradition, skill, and devotion.
+                                Your one-stop destination for authentic Bronze Statues, Electronics, Furniture, and Puja Items in Kumbakonam. Quality and tradition since establishment.
                             </Text>
                             <Group gap="md" mt="md">
                                 <SocialIcon href="#">
@@ -73,17 +73,17 @@ const Footer: React.FC = () => {
                         <Stack gap="md">
                             <Text size="lg" fw={600} c="white">Shop</Text>
                             <Stack gap="xs">
-                                <Link to="/products" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
+                                <Link to="/products?category=Bronze Statues" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
                                     Bronze Statues
                                 </Link>
-                                <Link to="/products" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
-                                    Wooden Sculptures
+                                <Link to="/products?category=Electronics" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
+                                    Electronics
                                 </Link>
-                                <Link to="/products" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
-                                    Brass Lamps
+                                <Link to="/products?category=Furniture" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
+                                    Furniture
                                 </Link>
-                                <Link to="/products" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
-                                    Tanjore Paintings
+                                <Link to="/products?category=Puja Items" style={{ color: '#d1d5db', textDecoration: 'none', fontSize: '0.875rem' }}>
+                                    Puja Items
                                 </Link>
                             </Stack>
                         </Stack>
@@ -94,9 +94,9 @@ const Footer: React.FC = () => {
                         <Stack gap="md">
                             <Text size="lg" fw={600} c="white">Contact Us</Text>
                             <Stack gap="sm" component="address" style={{ fontStyle: 'normal' }}>
-                                <Text size="sm">123 Temple Street, Chennai, Tamil Nadu, India - 600001</Text>
+                                <Text size="sm">No6/135, Opposite to City Union Bank, North Street, Natchar Koil, Kumbakonam-612602, Tamil Nadu</Text>
                                 <Text size="sm">
-                                    Email: <Anchor href="mailto:info@sih.com" c="#d1d5db">info@sih.com</Anchor>
+                                    Email: <Anchor href="mailto:info@amirthasuperstore.com" c="#d1d5db">info@amirthasuperstore.com</Anchor>
                                 </Text>
                                 <Text size="sm">
                                     Phone: <Anchor href="tel:+911234567890" c="#d1d5db">+91-1234567890</Anchor>
@@ -109,7 +109,7 @@ const Footer: React.FC = () => {
             <Box style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)', padding: '1rem 0' }}>
                 <Container size="xl">
                     <Text ta="center" size="sm" c="#9ca3af">
-                        &copy; {new Date().getFullYear()} South Indian Handicrafts Clone. All Rights Reserved.
+                        &copy; {new Date().getFullYear()} Amirtha Super Store. All Rights Reserved.
                     </Text>
                 </Container>
             </Box>

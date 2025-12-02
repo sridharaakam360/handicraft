@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import {
-    AppShell,
     Group,
     TextInput,
-    ActionIcon,
     Burger,
     Drawer,
     Stack,
@@ -20,18 +18,6 @@ import type { NavLink } from '../types';
 const SearchIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-    </svg>
-);
-
-const UserIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-    </svg>
-);
-
-const CartIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
     </svg>
 );
 
@@ -59,19 +45,19 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm }) => {
             <Box style={{ backgroundColor: '#6a1b1a', color: 'white', fontSize: '0.75rem', padding: '0.5rem 0' }}>
                 <Container size="xl">
                     <Group justify="space-between">
-                        <Text size="xs">Welcome to South Indian Handicrafts</Text>
+                        <Text size="xs">Welcome to Amirtha Super Store</Text>
                         <Group gap="md">
                             <Anchor href="tel:+911234567890" c="white" size="xs" style={{ textDecoration: 'none' }}>
                                 Call Us: +91-1234567890
                             </Anchor>
                             <Anchor
-                                href="mailto:info@sih.com"
+                                href="mailto:info@amirthasuperstore.com"
                                 c="white"
                                 size="xs"
                                 style={{ textDecoration: 'none' }}
                                 visibleFrom="md"
                             >
-                                info@sih.com
+                                info@amirthasuperstore.com
                             </Anchor>
                         </Group>
                     </Group>
@@ -83,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm }) => {
                 <Container size="xl" py="md">
                     <Group justify="space-between">
                         <Link to="/" style={{ textDecoration: 'none', color: '#6a1b1a', fontSize: '1.5rem', fontWeight: 'bold', fontFamily: 'Georgia, serif' }}>
-                            SI<span style={{ color: '#f7941d' }}>Handicrafts</span>
+                            Amirtha<span style={{ color: '#f7941d' }}> Super Store</span>
                         </Link>
 
                         <TextInput
@@ -101,30 +87,6 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm }) => {
                         />
 
                         <Group gap="sm">
-                            <ActionIcon variant="subtle" color="gray" size="lg">
-                                <UserIcon style={{ width: 24, height: 24 }} />
-                            </ActionIcon>
-                            <ActionIcon variant="subtle" color="gray" size="lg" style={{ position: 'relative' }}>
-                                <CartIcon style={{ width: 24, height: 24 }} />
-                                <Box
-                                    style={{
-                                        position: 'absolute',
-                                        top: -8,
-                                        right: -8,
-                                        backgroundColor: '#f7941d',
-                                        color: 'white',
-                                        borderRadius: '50%',
-                                        width: 20,
-                                        height: 20,
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        fontSize: '0.75rem'
-                                    }}
-                                >
-                                    0
-                                </Box>
-                            </ActionIcon>
                             <Burger opened={opened} onClick={toggle} hiddenFrom="lg" size="sm" />
                         </Group>
                     </Group>

@@ -10,7 +10,7 @@ const ContactPage: React.FC = () => {
             Get In Touch
           </Title>
           <Text size="lg" c="dimmed" mt="xs">
-            We'd love to hear from you. Contact us for any queries or feedback.
+            We'd love to hear from you. Visit our store or contact us for any queries.
           </Text>
         </Box>
 
@@ -79,12 +79,12 @@ const ContactPage: React.FC = () => {
               </Title>
               <div>
                 <Text fw={600} c="#3a0e0d">Address:</Text>
-                <Text>123 Temple Street, Chennai, Tamil Nadu, India - 600001</Text>
+                <Text>No6/135, Opposite to City Union Bank, North Street, Natchar Koil, Kumbakonam-612602, Tamil Nadu</Text>
               </div>
               <div>
                 <Text fw={600} c="#3a0e0d">Email:</Text>
-                <Anchor href="mailto:info@sih.com" c="#6a1b1a">
-                  info@sih.com
+                <Anchor href="mailto:info@amirthasuperstore.com" c="#6a1b1a">
+                  info@amirthasuperstore.com
                 </Anchor>
               </div>
               <div>
@@ -95,7 +95,7 @@ const ContactPage: React.FC = () => {
               </div>
               <div>
                 <Text fw={600} c="#3a0e0d">Business Hours:</Text>
-                <Text>Monday - Saturday: 10:00 AM - 7:00 PM</Text>
+                <Text>Monday - Saturday: 9:00 AM - 9:00 PM</Text>
                 <Text>Sunday: Closed</Text>
               </div>
             </Stack>

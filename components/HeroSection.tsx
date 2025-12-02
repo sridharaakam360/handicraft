@@ -8,7 +8,7 @@ const HeroSection: React.FC = () => {
             style={{
                 position: 'relative',
                 height: '80vh',
-                backgroundImage: "url('https://source.unsplash.com/1600x900/?indian,handicrafts,artisan')",
+                backgroundImage: "url('/assests/home/hero.png')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 display: 'flex',
@@ -36,7 +36,7 @@ const HeroSection: React.FC = () => {
                         textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
                     }}
                 >
-                    Timeless Artistry, <span style={{ color: '#f7941d' }}>Divine Craftsmanship</span>
+                    Amirtha <span style={{ color: '#f7941d' }}>Super Store</span>
                 </Title>
                 <Text
                     size="xl"
@@ -47,7 +47,7 @@ const HeroSection: React.FC = () => {
                         textShadow: '1px 1px 2px rgba(0,0,0,0.5)',
                     }}
                 >
-                    Discover authentic, handcrafted idols and art from the heart of South India.
+                    Your trusted destination for traditional Bronze Statues, modern Electronics, and premium Furniture in Kumbakonam.
                 </Text>
                 <Button
                     component={Link}
